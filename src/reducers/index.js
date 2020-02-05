@@ -1,8 +1,8 @@
-export default initialState = {
+export const initialState = {
     additionalPrice: 0,
     car: {
       price: 59995,
-      name: '2020 Chevrolet Corvette',
+      name: '2020 Chevrolet Corvette C8',
       image:
         'https://cdn.motor1.com/images/mgl/KqQjR/s1/2020-chevrolet-corvette-convertible-configurator.jpg',
       features: []
@@ -13,4 +13,14 @@ export default initialState = {
       { id: 3, name: 'Premium sound system', price: 500 },
       { id: 4, name: 'Rear spoiler', price: 250 }
     ]
+}
+
+
+export const CarReducer = (state= initialState, action) =>{
+
+
+    switch(action.type){
+        default:
+            return state
+    }
 }
