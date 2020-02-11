@@ -19,6 +19,7 @@ const AdditionalFeatures = props => {
     // debugger;
     if(props.features.find(fet=> fet.id ===item.id) ===undefined){
       props.addFeature(item)
+      
     }
     
     
@@ -30,7 +31,9 @@ const AdditionalFeatures = props => {
       {props.additionalFeatures.length ? (
         <ol type="1">
           {props.additionalFeatures.map(item => (
+            
             <AdditionalFeature key={item.id} feature={item} buyItem={buyItem}/>
+          
           ))}
         </ol>
       ) : (

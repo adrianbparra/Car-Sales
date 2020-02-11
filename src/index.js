@@ -7,6 +7,7 @@ import {Provider} from "react-redux";
 import {CarReducer} from "./reducers";
 
 import 'bulma/css/bulma.css';
+
 import './styles.scss';
 
 const store = createStore(CarReducer);

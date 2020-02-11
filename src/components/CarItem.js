@@ -1,28 +1,33 @@
 import React from 'react';
 import {connect} from "react-redux";
-import AddedFeatures from './AddedFeatures';
 
+import {Link} from "react-router-dom";
 
-
-const Header = props => {
+const CarItem = props => {
+  console.log(props)
   return (
     <div className="box">
       <figure className="image is-128x128">
         <img src={props.car.image} alt={props.car.name} />
       </figure>
-      <h2>{props.car.name}</h2>
+      <Link to={`${props.car.id}`}  className="button">Select</Link>
+      <h1>{props.car.name}</h1>
       <p>Amount: ${props.car.price}</p>
-      <AddedFeatures />
+
+      <h1>Additional Features</h1>
+
+      {props.car.features.map(feat=> <p key={feat.id}>{feat.name}</p>)}
+
     </div>
   );
 };
 
 const mapStatetoProps = state => {
   return {
-    car : state.car,
+    
   };
 };
 
 export default connect(mapStatetoProps, {
 
-})(Header);
+})(CarItem);
